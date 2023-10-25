@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class RegularBullet : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public GameObject regBulletPrefab;
     public float spawnrate = 1f;
     public bool shootRight = false;
 
@@ -23,13 +23,14 @@ public class RegularBullet : MonoBehaviour
     /// shoots a bullet and sets whih direction it should go
     /// </summary>
 
-    private void ShootBullet() 
+    private void ShootBulletRight() 
     {
-        GameObject laserInstance = Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
-        laserInstance.GetComponent<Bullet>().goingRight = shootRight;
+        //GameObject laserInstance = Instantiate(regBulletPrefab, transform.position, regBulletPrefab.transform.rotation);
+        //laserInstance.GetComponent<regBullet>().goingRight = shootRight;
+
     }
-    if //bullet hits player, 1 XP is taken away
-    if // space bar "fire button" is pressed, a laser is released
-    if // space bar is held, laser shoots at fire rate
-    if // space bar is released, player stops shooting
+    // if bullet hits player, 1 XP is taken away
+    // if space bar "fire button" is pressed, a laser is released
+    // if space bar is held, laser shoots at fire rate
+    // if space bar is released, player stops shooting
 }
