@@ -6,6 +6,8 @@ public class Gun : MonoBehaviour
 {
     public GameObject regularBullet;
     public GameObject heavyBullet;
+    public bool canShoot=true;
+
   
     // Start is called before the first frame update
     void Start()
@@ -20,10 +22,14 @@ public class Gun : MonoBehaviour
     }
     public void FireBullet()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (canShoot)
         {
-            //shooting a bullet
-            Instantiate(regularBullet, transform.position, transform.rotation); 
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                //shooting a bullet
+                Instantiate(regularBullet, transform.position, transform.rotation);
+            }
+
         }
     }
 }
