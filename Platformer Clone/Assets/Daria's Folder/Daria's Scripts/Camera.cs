@@ -8,8 +8,9 @@ public class Camera : MonoBehaviour
 
 
 
-    // Update is called once per frame
-    void Update()
+    
+
+    private void LateUpdate()
     {
         Vector3 tempPos = transform.position;
         tempPos.x = player.transform.position.x;
