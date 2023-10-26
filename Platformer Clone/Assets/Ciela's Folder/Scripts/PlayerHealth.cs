@@ -49,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 GetComponent<MeshRenderer>().enabled = true;
             }
+            yield return new WaitForSeconds(.1f);
         }
         GetComponent<MeshRenderer>().enabled = true;
     }
