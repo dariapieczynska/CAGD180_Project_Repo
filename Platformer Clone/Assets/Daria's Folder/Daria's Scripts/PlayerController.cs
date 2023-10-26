@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rigidBody;
     public int jumpForce = 10;
     public bool touchingTheGround;
-    public bool facingRight;
+    public bool facingRight=true;
     public float speed = 10f;
 
 
@@ -25,12 +25,21 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
+            if (facingRight)
+            {
+                facingRight = false;
+            }
+            
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
-        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
+            if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+            {
+                if (!facingRight)
+                {
+                    transform.position += Vector3.right * speed * Time.deltaTime;
+                }
+                transform.position += Vector3.right * speed * Time.deltaTime;
+            }
     }
 
     public void spaceJump()
