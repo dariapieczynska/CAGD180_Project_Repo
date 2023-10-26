@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rigidBody;
     public int jumpForce = 10;
     public bool touchingTheGround;
-    public bool facingRight=true;
+    public bool facingRight = true;
     public float speed = 10f;
 
 
@@ -25,27 +26,21 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
-            if (facingRight)
-            {
-                facingRight = false;
-            }
-            
+            TurnLeft();
+
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
-            if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
-            {
-                if (!facingRight)
-                {
-                    transform.position += Vector3.right * speed * Time.deltaTime;
-                }
-                transform.position += Vector3.right * speed * Time.deltaTime;
-            }
+        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+        {
+            TurnRight();
+            transform.position += Vector3.right * speed * Time.deltaTime;
+        }
     }
 
     public void spaceJump()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position,transform.TransformDirection(Vector3.down), out hit, 5f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5f))
         {
             touchingTheGround = true;
             Debug.Log("The player is touching the ground");
@@ -55,9 +50,32 @@ public class PlayerController : MonoBehaviour
             touchingTheGround = false;
             Debug.Log("The player is not touching the ground");
         }
-        if (Input.GetKeyDown("space")|| Input.GetKeyDown(KeyCode.UpArrow) && touchingTheGround==true)
+        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow) && touchingTheGround == true)
         {
             rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
+    public void TurnLeft()
+    {
+        if (Input.GetKeyDown("a") || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (facingRight)
+            {
+                facingRight = false;
+                transform.Rotate(Vector3.up * 180);
+            }
+        }
+    }
+    public void TurnRight()
+    {
+        if(Input.GetKeyDown("d") || Input.GetKeyDown(KeyCode.RightArrow))
+    {
+            if (!facingRight)
+            {
+                facingRight = true;
+                transform.Rotate(Vector3.up * 180);
+            }
+        }
+    }
+
 }
