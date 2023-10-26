@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
     }
     public void FireBullet()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             //shooting a bullet
             Instantiate(regularBullet, transform.position, transform.rotation); 
