@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int lives = 99;
-    public GameObject Player;
+    
 
     //how many points a regualr bullet will take away
     //private float regBulletValue = 5f;
@@ -28,9 +29,28 @@ public class PlayerHealth : MonoBehaviour
     {
          
     }
-    public void LoseALife() 
+    public void LoseALife()
     {
-
+        lives -= 15; 
+        {
+            MeshRenderer mesh = GetComponent<MeshRenderer>();
+            mesh.enabled = false;
+        }
+    }// to blink make new courutine
+    public IEnumerator Blink() 
+    {
+        for (int index = 0; index < 30; index++) 
+        {
+            if (index % 2 == 0) 
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
+            else 
+            {
+                GetComponent<MeshRenderer>().enabled = true;
+            }
+        }
+        GetComponent<MeshRenderer>().enabled = true;
     }
   
 }
