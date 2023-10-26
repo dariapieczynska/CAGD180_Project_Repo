@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public int lives = 99;
+    public GameObject Player;
 
     //how many points a regualr bullet will take away
     //private float regBulletValue = 5f;
@@ -28,27 +30,8 @@ public class PlayerHealth : MonoBehaviour
     }
     public void LoseALife() 
     {
-        Debug.Log("Player Lost a Life");
-        //lives--;
-
-        //if (lives == 0)
-        {
-            //Loads game over screen when player lives is 0
-            SceneManager.LoadScene(1);
-        }
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        // if the object trigger is enemy, add the value to the total score
-        //then destroy the apple we collected
-        
-        if (other.gameObject.tag == "Enemy")
-        {
-            LoseALife();
-            Destroy(other.gameObject);
-        }
-        
-    }
-}// player has 99 lives
+  
+}
 
