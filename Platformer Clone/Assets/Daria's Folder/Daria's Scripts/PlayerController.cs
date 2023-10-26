@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public bool touchingTheGround;
     public bool facingRight = true;
     public float speed = 10f;
+  
 
 
 
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
             TurnRight();
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
+
     }
 
     public void spaceJump()
@@ -77,5 +79,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+  
 
 }
