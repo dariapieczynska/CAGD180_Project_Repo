@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class HardEnemy : MonoBehaviour
 {
-    public int lives = 1;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int lives = 10;
 
     // Update is called once per frame
     void Update()
     {
         
     }
+    //if enemy gets hit with a regular bullet it will lose health
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "RegularBullet")
         {
-            loseHealth();
+            loseMinHealth();
+        }
+        if (other.gameObject.tag == "HeavyBullet") 
+        {
+            loseMaxHealth();
         }
     }
-    public void loseHealth()
+    //function for losing 1 HP
+    public void loseMinHealth()
     {
         lives -= 1;
-        {
-            MeshRenderer mesh = GetComponent<MeshRenderer>();
-            mesh.enabled = false;
-        }
+    }
+    //function for losing 3HP
+    public void loseMaxHealth() 
+    {
+        lives -= 3;
     }
 }

@@ -11,19 +11,26 @@ public class RegularEnemy : MonoBehaviour
     {
         
     }
+    //if enemy gets hit with a regular bullet it will lose health
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "RegularBullet")
         {
             loseHealth();
         }
+        if (other.gameObject.tag == "HeavyBullet")
+        {
+            loseMaxHealth();
+        }
     }
+    //function for losing 1 HP
     public void loseHealth()
     {
         lives -= 1;
-        {
-            MeshRenderer mesh = GetComponent<MeshRenderer>();
-            mesh.enabled = false;
-        }
+    }
+    //function for losing 3HP
+    public void loseMaxHealth()
+    {
+        lives -= 3;
     }
 }
