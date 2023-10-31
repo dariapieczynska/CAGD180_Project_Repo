@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
          
     }
     //causes player to lose 15HP after getting hit by a regular enemy 
-    public void loseHealth()
+    public void loseMinHealth()
     {
         lives -= 15; 
         {
@@ -39,12 +39,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "Regular Enemy") 
         {
-            loseHealth();
+            loseMinHealth();
         }
         if (other.gameObject.tag == "Hard Enemy") 
         {
             loseMaxHealth();
         }
+        
     }
 
     // player loses 35 HP after gettin hit by a hard enemy
@@ -73,6 +74,7 @@ public class PlayerHealth : MonoBehaviour
         }
         GetComponent<MeshRenderer>().enabled = true;
     }
+
   
 }
 
