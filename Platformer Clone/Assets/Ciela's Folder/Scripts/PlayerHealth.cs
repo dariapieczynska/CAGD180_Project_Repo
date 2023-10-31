@@ -13,12 +13,13 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int lives = 99;
-
+    public int healthPack;
+    public int startLives; 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startLives = lives;
     }
 
     // Update is called once per frame
@@ -44,6 +45,24 @@ public class PlayerHealth : MonoBehaviour
         if (other.gameObject.tag == "Hard Enemy") 
         {
             loseMaxHealth();
+        }
+        if(other.gameObject.tag=="health_pack")
+        {
+            if (lives <= lives-healthPack)
+            {
+                lives += healthPack;
+            }
+            else
+            {
+                lives = startLives;
+            }
+            other.gameObject.SetActive(false); 
+        }
+        if(other.gameObject.tag=="extra_health")
+        {
+            lives = startLives + 100;
+            startLives = lives;
+            other.gameObject.SetActive(false);
         }
         
     }
