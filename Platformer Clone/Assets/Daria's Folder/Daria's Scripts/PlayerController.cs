@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigidBody;
-    public int jumpForce = 10;
+    public int jumpForce = 5;
     public bool touchingTheGround;
     public bool facingRight = true;
     public float speed = 10f;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public void spaceJump()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 5f))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 3f))
         {
             touchingTheGround = true;
             Debug.Log("The player is touching the ground");
@@ -79,6 +79,14 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-  
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="jump_higher")
+        {
+            jumpForce = 10;
+            other.gameObject.SetActive(false);
+        }
+    }
+
 
 }
