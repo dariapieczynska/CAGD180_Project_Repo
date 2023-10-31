@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag=="jump_higher")
         {
-            jumpForce = 10;
+            jumpForce = 7;
             other.gameObject.SetActive(false);
         }
     }
