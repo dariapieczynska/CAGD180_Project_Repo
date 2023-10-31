@@ -13,10 +13,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int lives = 99;
-    
 
-    //how many points a regualr bullet will take away
-    //private float regBulletValue = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,14 +26,37 @@ public class PlayerHealth : MonoBehaviour
     {
          
     }
-    public void LoseALife()
+    //causes player to lose 15HP after getting hit by a regular enemy 
+    public void loseHealth()
     {
         lives -= 15; 
         {
             MeshRenderer mesh = GetComponent<MeshRenderer>();
             mesh.enabled = false;
         }
-    }// to blink make new courutine
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Regular Enemy") 
+        {
+            loseHealth();
+        }
+        if (other.gameObject.tag == "Hard Enemy") 
+        {
+            loseMaxHealth();
+        }
+    }
+
+    // player loses 35 HP after gettin hit by a hard enemy
+    public void loseMaxHealth() 
+    {
+        lives -= 35;
+        {
+            MeshRenderer mesh = GetComponent<MeshRenderer>();
+            mesh.enabled = false;
+        }
+    }
+    // couroutine causes player to blink after being shot
     public IEnumerator Blink() 
     {
         for (int index = 0; index < 30; index++) 
