@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
             touchingTheGround = false;
             Debug.Log("The player is not touching the ground");
         }
-        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow) && touchingTheGround == true)
+        if (Input.GetKeyDown("space") && touchingTheGround == true || Input.GetKeyDown(KeyCode.UpArrow) && touchingTheGround == true)
         {
             rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
