@@ -51,10 +51,12 @@ public class HardEnemy : MonoBehaviour
         if (other.gameObject.tag == "RegularBullet")
         {
             loseMinHealth();
+            other.gameObject.SetActive(false);
         }
         if (other.gameObject.tag == "HeavyBullet") 
         {
             loseMaxHealth();
+            other.gameObject.SetActive(false);
         }
     }
     //function for losing 1 HP
