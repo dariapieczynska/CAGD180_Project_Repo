@@ -27,4 +27,5 @@ public class RegularBullet : MonoBehaviour
             transform.position += speed * Vector3.right * Time.deltaTime;
         }
     }
+    //destroy itself
 }
