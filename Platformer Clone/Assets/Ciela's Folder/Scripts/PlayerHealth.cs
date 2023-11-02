@@ -44,6 +44,10 @@ public class PlayerHealth : MonoBehaviour
             MeshRenderer mesh = GetComponent<MeshRenderer>();
             mesh.enabled = false;
         }
+        if (lives < 0) 
+        {
+            Respawn();
+        } 
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -83,6 +87,10 @@ public class PlayerHealth : MonoBehaviour
         {
             MeshRenderer mesh = GetComponent<MeshRenderer>();
             mesh.enabled = false;
+        }
+        if (lives < 0)
+        {
+            Respawn();
         }
     }
     // couroutine causes player to blink after being shot

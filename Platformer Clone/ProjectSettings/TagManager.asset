@@ -11,6 +11,8 @@ TagManager:
   - health_pack
   - extra_health
   - HeavyBullet
+  - Undefined
+  - RegularEnemy
   layers:
   - Default
   - TransparentFX
