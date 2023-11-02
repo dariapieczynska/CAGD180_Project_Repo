@@ -5,13 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - heavy_bullet
-  - HeavyBullet
-  - RegularBullet
   - jump_higher
   - RegularBullet
   - HeavyBullet
   - health_pack
   - extra_health
+  - HeavyBullet
   layers:
   - Default
   - TransparentFX
