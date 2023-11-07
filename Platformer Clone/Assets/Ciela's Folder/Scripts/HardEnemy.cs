@@ -44,6 +44,10 @@ public class HardEnemy : MonoBehaviour
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
         }
+        if(lives<=0)
+        {
+            gameObject.SetActive(false);
+        }
     }
     //if enemy gets hit with a regular bullet it will lose health
     private void OnTriggerEnter(Collider other)
