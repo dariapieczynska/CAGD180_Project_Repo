@@ -9,7 +9,10 @@ public class RegularEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (lives <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
     //if enemy gets hit with a regular bullet it will lose health
     private void OnTriggerEnter(Collider other)
@@ -24,6 +27,7 @@ public class RegularEnemy : MonoBehaviour
         }
     }
     //function for losing 1 HP
+    
     public void loseHealth()
     {
         lives -= 1;
