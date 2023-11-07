@@ -51,11 +51,11 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Regular Enemy") 
+        if (other.gameObject.tag == "RegularEnemy") 
         {
             loseMinHealth();
         }
-        if (other.gameObject.tag == "Hard Enemy") 
+        if (other.gameObject.tag == "HardEnemy") 
         {
             loseMaxHealth();
         }
