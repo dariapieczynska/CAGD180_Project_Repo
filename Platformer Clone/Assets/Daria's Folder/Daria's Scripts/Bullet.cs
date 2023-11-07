@@ -9,5 +9,14 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += transform.right * speed * Time.deltaTime;
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }
