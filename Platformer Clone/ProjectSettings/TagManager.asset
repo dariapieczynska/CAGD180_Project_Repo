@@ -13,6 +13,7 @@ TagManager:
   - HeavyBullet
   - Undefined
   - RegularEnemy
+  - wall
   layers:
   - Default
   - TransparentFX
