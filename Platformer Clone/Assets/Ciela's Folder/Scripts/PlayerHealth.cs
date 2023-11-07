@@ -51,14 +51,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "RegularEnemy") 
-        {
-            loseMinHealth();
-        }
-        if (other.gameObject.tag == "HardEnemy") 
-        {
-            loseMaxHealth();
-        }
+     
         if(other.gameObject.tag=="health_pack")
         {
             if (lives <= lives-healthPack)
@@ -78,6 +71,17 @@ public class PlayerHealth : MonoBehaviour
             other.gameObject.SetActive(false);
         }
         
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+       if(collision.gameObject.tag== "RegularEnemy")
+        {
+            loseMinHealth();
+        }
+        if (collision.gameObject.tag == "HardEnemy")
+        {
+            loseMinHealth();
+        }
     }
 
     // player loses 35 HP after gettin hit by a hard enemy
