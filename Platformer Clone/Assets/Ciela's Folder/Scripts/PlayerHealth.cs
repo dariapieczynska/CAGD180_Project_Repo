@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Parent, Ciela
-// 10/23/23
+// 11/13/23
 // Controls players health and XP
 
 
@@ -51,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        //if we collide with a health pack trigger, it heals player to origionl health
      
         if(other.gameObject.tag=="health_pack")
         {
@@ -64,11 +65,21 @@ public class PlayerHealth : MonoBehaviour
             }
             other.gameObject.SetActive(false); 
         }
+        //when collided with, the prefab extra_health will give the player 100HP (max health)
         if(other.gameObject.tag=="extra_health")
         {
             lives = startLives + 100;
             startLives = lives;
             other.gameObject.SetActive(false);
+        }
+        //if we collide with a portal trigger, teleport the player to the nect level.
+        // and reset the starting point
+        if (other.gameObject.tag == "Portal") 
+        {
+            //restart the startPos to the spawnPoint positio
+            startPosition = other.gameObject.GetComponent<Portal>().spawnPoint.transform.position;
+            //bring the player back to the start position
+            transform.position = startPosition;
         }
         
     }

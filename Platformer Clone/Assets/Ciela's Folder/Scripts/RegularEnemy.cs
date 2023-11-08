@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Parent, Ciela
+// 11/13/23
+// Handles damage done to the player, and the health of the regular enemy
 
 public class RegularEnemy : MonoBehaviour
 {

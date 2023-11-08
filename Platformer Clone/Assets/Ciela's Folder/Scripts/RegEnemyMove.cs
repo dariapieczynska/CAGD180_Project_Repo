@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Parent, Ciela
-// 10/23/23
-// Handles the side to side movement of the regular enemy
+// 11/13/23
+// Handles the side to side movement, health of the regular enemy.
+// Also handles damage done to the player
 
 public class RegEnemyMove : MonoBehaviour
 {

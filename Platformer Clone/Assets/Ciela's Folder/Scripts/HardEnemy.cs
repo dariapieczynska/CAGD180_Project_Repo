@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Parent, Ciela
+// 11/13/23
+// Controls HardEnemy's health and damage it does to player
+
 public class HardEnemy : MonoBehaviour
 {
     public int lives = 10;
@@ -19,7 +23,6 @@ public class HardEnemy : MonoBehaviour
             withinItsArea = false;
             transform.position = new Vector3(minDistance, transform.position.y, transform.position.z);
 
-
         }
         else
         {
@@ -29,7 +32,6 @@ public class HardEnemy : MonoBehaviour
         {
             withinItsArea = false;
             transform.position = new Vector3(maxDistance, transform.position.y, transform.position.z);
-
 
         }
         else
