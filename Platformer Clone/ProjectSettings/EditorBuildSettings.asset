@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 90ccd12ee30111d489b120de7a5a92bb
+  - enabled: 1
+    path: Assets/Ciela's Folder/Scenes/Game Over.unity
+    guid: 9a15cfd41037fb044be7f72775458476
   m_configObjects: {}
