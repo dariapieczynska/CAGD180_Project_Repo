@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Pieczynska, Daria & Parent, Ciela
+//11/09/2023
+//Player moves right and left 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigidBody;

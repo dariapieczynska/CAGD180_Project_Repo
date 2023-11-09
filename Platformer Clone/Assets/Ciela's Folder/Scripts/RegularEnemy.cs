@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// Parent, Ciela
+// Parent, Ciela & Pieczynska, Daria
 // 11/13/23
 // Handles damage done to the player, and the health of the regular enemy
 

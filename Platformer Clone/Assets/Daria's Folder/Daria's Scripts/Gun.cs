@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Pieczynska, Daria & Parent, Ciela 
+// 11/09/2023
+// Gun picks up heavy bullets and has a cool down every half second. 
 public class Gun : MonoBehaviour
 {
     public GameObject regularBullet;
@@ -10,11 +12,7 @@ public class Gun : MonoBehaviour
     public bool heavyBulletObject = false; 
 
   
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
     void Update()

@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Parent, Ciela
+// Parent, Ciela & Pieczynska, Daria
 // 11/13/23
 // Controls players health and XP
 
@@ -18,7 +18,9 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 startPosition;
 
     public int healthPack;
-    public int startLives; 
+    public int startLives;
+
+    private bool canTakeDamage = true;
 
     // Start is called before the first frame update
     void Start()
@@ -39,10 +41,14 @@ public class PlayerHealth : MonoBehaviour
     //causes player to lose 15HP after getting hit by a regular enemy 
     public void loseMinHealth()
     {
+        if(!canTakeDamage)
+        {
+            return;
+        }
         lives -= 15; 
         {
             MeshRenderer mesh = GetComponent<MeshRenderer>();
-            mesh.enabled = false;
+            StartCoroutine(Blink());
         }
         if (lives < 0) 
         {
@@ -98,10 +104,15 @@ public class PlayerHealth : MonoBehaviour
     // player loses 35 HP after gettin hit by a hard enemy
     public void loseMaxHealth() 
     {
+        if (!canTakeDamage)
+        {
+            return;
+        }
+
         lives -= 35;
         {
             MeshRenderer mesh = GetComponent<MeshRenderer>();
-            mesh.enabled = false;
+            StartCoroutine(Blink());
         }
         if (lives < 0)
         {
@@ -111,6 +122,7 @@ public class PlayerHealth : MonoBehaviour
     // couroutine causes player to blink after being shot
     public IEnumerator Blink() 
     {
+        canTakeDamage = false;
         for (int index = 0; index < 30; index++) 
         {
             if (index % 2 == 0) 
@@ -124,6 +136,7 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(.1f);
         }
         GetComponent<MeshRenderer>().enabled = true;
+        canTakeDamage = true;
     }
     //sends player back to starting point
     private void Respawn() 
