@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Parent, Ciela
+// Parent, Ciela and Pieczynska, Daria
 // 11/13/23
 // Controls HardEnemy's health and damage it does to player
 

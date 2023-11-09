@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Pieczynska, Daria & Parent, Ciela
+//11/09/2023
+//Bullets' speed and get destroyed when they hit a wall
 public class Bullet : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -19,4 +21,5 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 }
