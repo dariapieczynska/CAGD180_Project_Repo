@@ -17,6 +17,8 @@ TagManager:
   - HardEnemy
   - Portal1
   - Portal
+  - door
+  - jetpack
   layers:
   - Default
   - TransparentFX
