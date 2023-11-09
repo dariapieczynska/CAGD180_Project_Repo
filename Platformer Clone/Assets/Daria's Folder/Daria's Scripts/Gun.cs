@@ -9,8 +9,8 @@ public class Gun : MonoBehaviour
     public GameObject regularBullet;
     public GameObject heavyBullet;
     public bool canShoot=true;
-    public bool heavyBulletObject = false; 
-
+    public bool heavyBulletObject = false;
+    public int heavyBulletNumber = 0; 
   
    
 
@@ -47,8 +47,10 @@ public class Gun : MonoBehaviour
             Debug.Log("hit heavy bullet");
             heavyBulletObject=true;
             other.gameObject.SetActive(false);
+            heavyBulletNumber++;
         }
-    }
+      
+        }
     public IEnumerator CoolDown()
     {
         canShoot = false;
