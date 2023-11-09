@@ -56,6 +56,7 @@ public class Gun : MonoBehaviour
         if(other.tag=="jetpack")
         {
             jetpackNumber++;
+            other.gameObject.SetActive(false);
         }
       
         }
