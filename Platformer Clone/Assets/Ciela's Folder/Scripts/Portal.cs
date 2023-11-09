@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackEnemy : MonoBehaviour
-{
-    public GameObject player;
-    public float playerX;
+// Parent, Ciela
+// 11/13/23
+// Contains the spawnPoint for Portal
 
+public class Portal : MonoBehaviour
+{
+
+    //game object to determine where the player spawns
+    public GameObject spawnPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +21,6 @@ public class AttackEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerX = player.transform.position.x;
+        
     }
-    
 }

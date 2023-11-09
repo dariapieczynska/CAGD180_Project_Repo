@@ -5,8 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 // Parent, Ciela
-// 10/23/23
-// Handles when bullet is fired and how much XP is taken
+// 11/13/23
+// Handles the speed and direction of a regular bullet
 
 public class RegularBullet : MonoBehaviour
 {
