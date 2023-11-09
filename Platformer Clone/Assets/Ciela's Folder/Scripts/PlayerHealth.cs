@@ -31,9 +31,9 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if (transform.position.y < fallDepth) 
+        if (transform.position.y < fallDepth) 
         {
-            Respawn();
+            LoseALife();
         }
     }
     //causes player to lose 15HP after getting hit by a regular enemy 
@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if (lives < 0) 
         {
-            Respawn();
+            LoseALife();
         } 
     }
     private void OnTriggerEnter(Collider other)
@@ -105,7 +105,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if (lives < 0)
         {
-            Respawn();
+            LoseALife();
         }
     }
     // couroutine causes player to blink after being shot
@@ -125,18 +125,26 @@ public class PlayerHealth : MonoBehaviour
         }
         GetComponent<MeshRenderer>().enabled = true;
     }
-    //sends player back to starting point
-    private void Respawn() 
+    private void LoseALife()
     {
-        transform.position = startPosition;
-        lives--;
 
-        if (lives <= 0) 
+        if (lives <= 0)
         {
-            this.enabled = false;
+            SceneManager.LoadScene(1);
         }
     }
+    //sends player back to starting point
+    //private void Respawn() 
+    //  {
+    //   transform.position = startPosition;
+    //   lives--;
 
-  
+    //    if (lives <= 0) 
+    //     {
+    //       this.enabled = false;
+    //    }
+    //  }
+
+
 }
 
