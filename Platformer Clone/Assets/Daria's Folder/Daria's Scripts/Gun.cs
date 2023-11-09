@@ -11,7 +11,8 @@ public class Gun : MonoBehaviour
     public bool canShoot=true;
     public bool heavyBulletObject = false;
     public int heavyBulletNumber = 0;
-    public int jetpackNumber = 0; 
+    public int jetpackNumber = 0;
+    public GameObject player; 
   
    
 
@@ -57,6 +58,7 @@ public class Gun : MonoBehaviour
         {
             jetpackNumber++;
             other.gameObject.SetActive(false);
+            //player.AddComponent<JetPack>();
         }
       
         }
