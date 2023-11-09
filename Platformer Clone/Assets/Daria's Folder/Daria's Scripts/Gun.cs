@@ -10,7 +10,8 @@ public class Gun : MonoBehaviour
     public GameObject heavyBullet;
     public bool canShoot=true;
     public bool heavyBulletObject = false;
-    public int heavyBulletNumber = 0; 
+    public int heavyBulletNumber = 0;
+    public int jetpackNumber = 0; 
   
    
 
@@ -19,6 +20,9 @@ public class Gun : MonoBehaviour
     {
         FireBullet();
     }
+    /// <summary>
+    /// the gun fires a bullet
+    /// </summary>
     public void FireBullet()
     {
         if (canShoot)
@@ -48,6 +52,10 @@ public class Gun : MonoBehaviour
             heavyBulletObject=true;
             other.gameObject.SetActive(false);
             heavyBulletNumber++;
+        }
+        if(other.tag=="jetpack")
+        {
+            jetpackNumber++;
         }
       
         }
