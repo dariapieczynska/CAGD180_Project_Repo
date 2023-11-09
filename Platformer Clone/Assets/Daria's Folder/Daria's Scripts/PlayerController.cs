@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
             jumpForce = 7;
             other.gameObject.SetActive(false);
         }
+       
     }
 
 
