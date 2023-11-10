@@ -58,7 +58,7 @@ public class Gun : MonoBehaviour
         {
             jetpackNumber++;
             other.gameObject.SetActive(false);
-            //player.AddComponent<JetPack>();
+            player.AddComponent<JetPack>();
         }
       
         }
