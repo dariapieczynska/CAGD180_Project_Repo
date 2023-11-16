@@ -3222,6 +3222,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2733316018272961493, guid: 30f42e30991bd0f4c89c5c2b081f3943, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 5357404342962009447, guid: 30f42e30991bd0f4c89c5c2b081f3943, type: 3}
       propertyPath: m_Name
       value: hard enemy (3)
@@ -5686,7 +5690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5868138221482822078, guid: 54c67effc5b09fc42bb42e1325db405e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.15
+      value: -50.1
       objectReference: {fileID: 0}
     - target: {fileID: 5868138221482822078, guid: 54c67effc5b09fc42bb42e1325db405e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12098,8 +12102,8 @@ SceneRoots:
   - {fileID: 1259951343}
   - {fileID: 299042275}
   - {fileID: 1450187222}
-  - {fileID: 2136628524}
   - {fileID: 1295771860}
+  - {fileID: 2136628524}
   - {fileID: 1442472330}
   - {fileID: 741492501}
   - {fileID: 1329850301}
